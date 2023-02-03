@@ -8,11 +8,17 @@
 </head>
 <body>
     Hello world!
+    <button id="openDevToolsBtn">打开开发者工具</button>
     <script src="./objRender.js"></script>
     <script>
         alert(window.objRender.key)
         alert(window.objRender2.key)
        
+        let {remote} = require('electron')
+        document.querySelector('#openDevToolsBtn').addEventListener('click',function(){
+            // remote.getCurrentWindow().webContents.openDevTools()
+            remote.getCurrentWebContents().openDevTools()
+        })
     </script>
 </body>
 </html>
