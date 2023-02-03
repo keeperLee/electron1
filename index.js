@@ -1,6 +1,5 @@
 let electron = require("electron");
-let app = electron.app;
-let {BrowserWindow} = electron;
+let {app,BrowserWindow} = electron;
 let win = null;
 app.on("ready", function () {
   win = new BrowserWindow({
