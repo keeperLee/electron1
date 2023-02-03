@@ -6,6 +6,7 @@ app.on("ready", function () {
     webPreferences: { nodeIntegration: true },  //允许页面集成node环境
   });
   win.loadFile('index.html')
+  win.webContents.openDevTools() //打开调试面板
   win.on('closed',function(){
     win = null
   })
