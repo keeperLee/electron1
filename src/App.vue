@@ -45,8 +45,60 @@ body,html{
 }
 </style>
 
+<style lang="scss" scoped>
+@import url(https://at.alicdn.com/t/font_1378132_s4e44adve5.css);
+.titleBar{
+    height: 38px;
+    line-height: 36px;
+    background: #fff1f0;
+    display: flex;
+    border-bottom:1px solid #f5222d;
+    .title{
+        flex:1;
+        display: flex;
+        -webkit-app-region:drag;
+        .logo{
+            padding-left: 8px;
+            padding-right: 6px;
+            img{
+                width: 20px;
+                height: 20px;
+                margin-top: 7px;
+            }
+        }
+        .txt {
+            text-align: left;
+            flex:1;
+        }
+    }
+}
+.windowTool{
+    div {
+        color:#888;
+        height:100%;
+        width:38px;
+        display: inline-block;
+        cursor: pointer;
+        &:hover{
+            background: #ffccc7;
+        }
+        i{
+            font-size: 12px;
+        }
+    }
+    .close:hover{
+        color:#fff;
+        background: #ff4d4f;
+    }
+}
+.content{
+    flex:1;
+    overflow-y:auto;
+    overflow-x:auto;
+}
+</style>
+
 <script>
-let {remote} = require("electron")
 export default{
     data(){
         return {
@@ -55,17 +107,19 @@ export default{
     },
     methods:{
         close(){
-            remote.getCurrentWindow.close()
+            // remote.getCurrentWindow.close()
         },
         minisize(){
-            remote.getCurrentWindow.minisize()
+            // remote.getCurrentWindow.minisize()
         },
         restore(){
-            remote.getCurrentWindow.restore()
+            // remote.getCurrentWindow.restore()
         },
         maxsize(){
-            remote.getCurrentWindow.maxsize()
+            // remote.getCurrentWindow.maxsize()
         }
+    },
+    created(){
     }
 }
 </script>
