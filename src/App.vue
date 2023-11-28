@@ -130,21 +130,22 @@ export default {
                 }, 300)
             }
         },
-        setState(){
+        setState () {
             let win = remote.getCurrentWindow();
             let rect = win.getBounds();
             let isMaxSize = win.isMaximized();
-            let obj = {rect,isMaxSize};
-            localStorage.setItem('winState',JSON.stringify(obj))
+            this.isMaxSize = isMaxSize;
+            let obj = { rect, isMaxSize };
+            localStorage.setItem('winState', JSON.stringify(obj))
         },
-        getState(){
+        getState () {
             let win = remote.getCurrentWindow();
             let winState = localStorage.getItem('winState');
-            if(winState){
+            if (winState) {
                 winState = JSON.parse(winState);
-                if(winState.isMaxSize){
+                if (winState.isMaxSize) {
                     win.maximize();
-                }else{
+                } else {
                     win.setBounds(winState.rect);
                 }
             }
